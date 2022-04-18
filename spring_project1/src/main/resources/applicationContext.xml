@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--Bean标签-->
+    <!--
+        功能 ： 配置bean
+        标签：
+            1. scope 对象作用范围
+                     singleton
+                                特点 ：          单例 [默认] 在容器中只有一个相同对象
+                                Bean创建时机：   【加载配置文件】的时候 【饿汉式】创建
+                                Bean 生命周期 ：
+                                                1. 对象创建：应用加载，创建容器，创建对象
+                                                2. 对象运行：容器一直在，对象一直或者
+                                                3. 对象销毁：应用卸载，销毁容器，对象销毁
+                     prototype
+                                特点：           多例 在容器中每次都能拿到一个不同的对象
+                                Bean创建时机：    调用getBean()方法时创建实例化对象  【懒汉式】创建
+                                Bean 生命周期：
+                                                1. 对象创建：使用对象时，创建新的对象实例
+                                                2. 对象运行：只要对象使用中就一直或者
+                                                3. 对象销毁： 当对象长时间不用，java垃圾回收回收多例对象
+
+
+
+                     request   web项目中创建存储到request域中的Bean对象
+            【global】session          【global】session域中
+
+        构造时机：
+    -->
+    <bean id="userDao" class="com.lzw.dao.UserDaoImpl" scope="prototype">
+
+    </bean>
+
+
+
+</beans>
